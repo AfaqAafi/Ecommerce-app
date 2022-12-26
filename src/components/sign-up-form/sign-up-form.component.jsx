@@ -30,7 +30,7 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
-      alert("Password Do not match");
+      alert("Password didn't match");
       return;
     }
     try {
@@ -38,6 +38,7 @@ const SignUpForm = () => {
         email,
         password
       );
+
       await createUserDocumentFromAuth(user, { displayName });
       resetFields();
     } catch (error) {
